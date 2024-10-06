@@ -26,10 +26,10 @@ export const SimpleForm = () => {
             <h1> Formulario Simple </h1>
             <hr/>
 
-            <input name="username" placeholder="Username" type="text"
+            <input name="username" type="text"
                 value={username} onChange={onInputChange} />
 
-            <input name="email" placeholder="fernando@google.com" type="email"
+            <input name="email" type="email"
                 value={email} onChange={onInputChange} />
 
             {

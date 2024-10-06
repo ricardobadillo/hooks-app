@@ -5,7 +5,6 @@ export const Padre = () => {
     const numeros = [2, 4, 6, 8, 10];
     const [ value, setValue ] = React.useState(0);
 
-
     const memorizedFn = useCallback((valueToIncrement: number) => {
         setValue((c) => c + valueToIncrement);
     }, []);

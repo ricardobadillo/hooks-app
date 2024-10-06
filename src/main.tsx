@@ -11,7 +11,8 @@ import './index.css';
 // import { FocusScreen } from './useRef/FocusScreen';
 // import { Memorize } from './useMemo/Memorize';
 // import { CallbackHook } from './useCallback/CallbackHook';
-import { Padre } from './useCallback/Padre';
+// import { Padre } from './useCallback/Padre';
+import { TodoApp } from './useReducer/TodoApp';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -24,6 +25,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     {/* <FocusScreen /> */}
     {/* <Memorize/> */}
     {/* <CallbackHook /> */}
-    <Padre />
+    {/* <Padre /> */}
+    <TodoApp />
   </React.StrictMode>
 );

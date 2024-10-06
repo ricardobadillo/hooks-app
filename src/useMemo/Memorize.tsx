@@ -1,6 +1,6 @@
-import { useMemo, useState } from "react";
-import { useCounter } from "../hooks";
-import { Small } from "./Small";
+import { useMemo, useState } from 'react';
+import { useCounter } from '../hooks';
+import { Small } from './Small';
 
 const heavyStuff = (iterations: number) => {
     for (let i = 0; i < iterations; i++) {
@@ -9,7 +9,6 @@ const heavyStuff = (iterations: number) => {
 
     return `${ iterations } iteraciones realizadas`;
 };
-
 export const Memorize = () => {
     const { counter, increment } = useCounter(10);
     const [ show, setShow ] = useState(true);
@@ -27,7 +26,7 @@ export const Memorize = () => {
             <p> { memorizedValue } </p>
 
             <button onClick={ () => increment() }> +1 </button>
-            <button onClick={ handleClick }> { show ? 'Show' : 'Hide' } </button>
+            <button onClick={ handleClick }> { show ? 'Mostrar' : 'Ocultar' } </button>
         </>
     )
 }

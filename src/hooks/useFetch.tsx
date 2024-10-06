@@ -1,7 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import { Pokemon } from '../models/pokemon';
 
-const localCache: { [key: string]: Pokemon } = {
+const localCache: { [ key: string ]: Pokemon } = {
     'https://pokeapi.co/api/v2/pokemon/1': {
         id: 1,
         name: 'bulbasaur',
@@ -15,21 +16,22 @@ const localCache: { [key: string]: Pokemon } = {
 };
 
 export const useFetch = (url: string) => {
-
-    const [ state, setState ] = useState<
-    { data: Pokemon | null, isLoading: boolean, hasError: boolean, error: unknown }
-    >({ data: null, isLoading: true, hasError: false, error: null });
+    const [ state, setState ] = useState<{
+        data: Pokemon | null,
+        isLoading: boolean,
+        hasError: boolean,
+        error: null | { code: number, message: string }
+    }>({ data: null, isLoading: true, hasError: false, error: null });
 
     useEffect(() => {
         getFetch();
-    }, [url]);
+    }, [ url ]);
 
     const setLoadingState = () => {
         setState({ data: null, isLoading: true, hasError: false, error: null });
     }
 
     const getFetch = async () => {
-
         if (localCache[url]) {
             setState({ data: localCache[url], isLoading: false, hasError: false, error: null });
             return;
@@ -46,7 +48,7 @@ export const useFetch = (url: string) => {
             return;
         }
 
-        const data = await response.json();
+        const data: Pokemon = await response.json();
         setState({ data: data, isLoading: false, hasError: false, error: null });
 
         localCache[url] = data;

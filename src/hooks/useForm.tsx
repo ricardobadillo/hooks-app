@@ -6,7 +6,7 @@ export const useForm = <T extends object>(initialForm = {} as T) => {
     const onInputChange = (event: SyntheticEvent) => {
         const { name, value } = event.target as HTMLInputElement;
 
-        setFormState({ ...formState, [name]: value });
+        setFormState({ ...formState, [ name ]: value });
     }
 
     const onResetForm = () => {

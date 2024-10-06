@@ -1,7 +1,6 @@
 import { useCounter } from "../hooks/useCounter";
 
 export const CounterWithCustomHook = () => {
-
     const { counter, increment, decrement, reset } = useCounter();
 
     return (
@@ -13,5 +12,5 @@ export const CounterWithCustomHook = () => {
             <button onClick={ reset }> Reset </button>
             <button onClick={ () => decrement() }> -1 </button>
         </>
-    )
+    );
 }
